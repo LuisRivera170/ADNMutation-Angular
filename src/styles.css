@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.margin-center {
+	margin: 0 auto;
+}
+
+.mb-6, .my-6 {
+    margin-bottom: 4rem!important;
+}
+.mt-6, .my-6 {
+    margin-top: 4rem!important;
+}
