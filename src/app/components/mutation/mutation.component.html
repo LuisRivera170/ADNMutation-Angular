@@ -1,0 +1,58 @@
+<div class="bg-top-blue"></div>
+<nav class="navbar navbar-custom">
+	<span class="navbar-brand header-title">ADN detector <span *ngIf="stats" class="header-info">CM: {{stats.count_mutations}} SM: {{stats.count_no_mutations}}</span></span>
+</nav>
+<div class="container">
+	<div class="row mb-4">
+		<div class="col-md-3 text-center"><button class="btn btn-new-human" data-toggle="modal" data-target="#newHumanModal">Nuevo humano</button></div>
+		<div class="col-md-3 text-center"><button class="btn btn-option" (click)="requestStats()">Analizar humanos</button></div>
+		<div class="col-md-3 text-center"><button class="btn btn-option" (click)="filterMutation(MutationOption.WITH_MUTATION)" [ngStyle]="{'background-color': this.actualFilter === MutationOption.WITH_MUTATION ? '#BA451A': '#2838D1'}">Con mutación</button></div>
+		<div class="col-md-3 text-center"><button class="btn btn-option" (click)="filterMutation(MutationOption.WITHOUT_MUTATION)" [ngStyle]="{'background-color': this.actualFilter === MutationOption.WITHOUT_MUTATION ? '#3B8924': '#2838D1'}">Sin mutación</button></div>
+	</div>
+	<div class="row my-6">
+		<div class="col-md-4" *ngFor="let human of humans">
+			<div class="card my-3">
+				<div class="row no-gutters mb-4">
+					<div class="col-md-5 dot-container">
+						<span class="dot align-middle" [ngStyle]="{'background-color': human?.isMutating ? '#BA451A' : '#3B8924'}"></span>
+					</div>
+					<div class="col-md-7">
+						<p class="mutation-info" style="font-weight: bold;">{{human?.name}}</p>
+						<p class="mutation-info">Creado en: {{human?.createdAt | date:"yyyy/MM/dd"}}</p>
+					</div>
+				</div>
+				<div class="row margin-center mutation-indicator">
+					<span [ngStyle]="{'color': human?.isMutating ? '#BA451A' : '#3B8924'}">{{(human?.isMutating ? 'CON ': 'SIN ') + 'MUTACIÓN'}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="newHumanModal" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 dot-container">
+							<span class="dot align-middle dot-new"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<form class="text-center">
+								<mat-form-field appearance="legacy" class="mt-4 mb-5" style="width: 100%;">
+									<mat-label>Nombre de humano</mat-label>
+									<input matInput [formControl]="name" required>
+									<mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+								</mat-form-field>
+								<button class="btn btn-form-new-human" (click)="createHuman()">Crear humano</button>	
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

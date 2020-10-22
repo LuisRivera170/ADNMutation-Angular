@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MutationComponent } from './mutation/mutation.component';
+import { MutationComponent } from './components/mutation/mutation.component';
 
 
 const routes: Routes = [
