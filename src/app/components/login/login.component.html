@@ -1,0 +1,32 @@
+<div class="bg-login">
+	<nav class="navbar navbar-custom">
+		<span class="navbar-brand header-title">TEST</span>
+	</nav>
+	<div class="container-fluid container-login">
+		<div class="row" style="justify-content: flex-end;">
+			<div class="col-6">
+				<div class="card card-login">
+					<form>
+						<mat-form-field appearance="legacy" class="mt-4 mb-5" style="width: 100%;">
+							<mat-label>Usuario</mat-label>
+							<input matInput [formControl]="user" required>
+							<!--<mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>-->
+						</mat-form-field>
+
+						<mat-form-field appearance="legacy" class="mt-4 mb-5" style="width: 100%;">
+							<mat-label>Contraseña</mat-label>
+							<input matInput [formControl]="password" required>
+							<!--<mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>-->
+						</mat-form-field>
+
+						<button class="btn btn-login">Ingresar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Dots-->
+<div class="dot-one"></div>
+<div class="dot-three"></div>
+<div class="dot-two"></div>

@@ -10,11 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MutationComponent } from './components/mutation/mutation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MutationComponent
+    MutationComponent,
+    LoginComponent
   ],
   imports: [
 	AppRoutingModule,
