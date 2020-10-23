@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MutationService } from 'src/app/services/mutation.service';
 import { Human } from '../../models/Human';
 import {FormControl, Validators} from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 export enum MutationOption {
 	NONE,
@@ -22,13 +23,7 @@ export class MutationComponent implements OnInit {
 	public stats: any;
 	public name = new FormControl('', [Validators.required]);
 
-	getErrorMessage() {
-		if (this.name.hasError('required')) {
-			return 'El nombre es requerido';
-		}
-	}
-
-	constructor(private mutationService: MutationService) {
+	constructor(private authService: AuthService, private mutationService: MutationService) {
 		mutationService.getHumans().subscribe(humans => {
 			this.humans = humans;
 			this.humansBack = humans;
@@ -72,6 +67,16 @@ export class MutationComponent implements OnInit {
 			this.humans = this.humansBack;
 			this.actualFilter = MutationOption.NONE;
 		});
+	}
+
+	public getErrorMessage() {
+		if (this.name.hasError('required')) {
+			return 'El nombre es requerido';
+		}
+	}
+
+	public logout() {
+		this.authService.logout();
 	}
 
 }

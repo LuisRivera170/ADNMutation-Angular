@@ -1,6 +1,16 @@
 <div class="bg-top-blue"></div>
 <nav class="navbar navbar-custom">
-	<span class="navbar-brand header-title">ADN detector <span *ngIf="stats" class="header-info">CM: {{stats.count_mutations}} SM: {{stats.count_no_mutations}}</span></span>
+	<span class="navbar-brand header-title" style="margin-left: 150px;">ADN detector <span *ngIf="stats" class="header-info">CM: {{stats.count_mutations}} SM: {{stats.count_no_mutations}}</span></span>
+	<div class="nav-item dropdown">
+		<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: 150px;">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			<a class="dropdown-item" (click)="logout()">Cerrar sesión</a>
+		</div>
+	</div>
 </nav>
 <div class="container">
 	<div class="row mb-4">
