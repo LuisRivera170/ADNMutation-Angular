@@ -1,8 +1,8 @@
 <div class="bg-top-blue"></div>
 <nav class="navbar navbar-custom">
-	<span class="navbar-brand header-title" style="margin-left: 150px;">ADN detector <span *ngIf="stats" class="header-info">CM: {{stats.count_mutations}} SM: {{stats.count_no_mutations}}</span></span>
+	<span class="navbar-brand header-title">ADN detector <span *ngIf="stats" class="header-info">CM: {{stats.count_mutations}} SM: {{stats.count_no_mutations}}</span></span>
 	<div class="nav-item dropdown">
-		<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: 150px;">
+		<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -14,10 +14,10 @@
 </nav>
 <div class="container">
 	<div class="row mb-4">
-		<div class="col-md-3 text-center"><button class="btn btn-new-human" data-toggle="modal" data-target="#newHumanModal">Nuevo humano</button></div>
-		<div class="col-md-3 text-center"><button class="btn btn-option" (click)="requestStats()">Analizar humanos</button></div>
-		<div class="col-md-3 text-center"><button class="btn btn-option" (click)="filterMutation(MutationOption.WITH_MUTATION)" [ngStyle]="{'background-color': this.actualFilter === MutationOption.WITH_MUTATION ? '#BA451A': '#2838D1'}">Con mutación</button></div>
-		<div class="col-md-3 text-center"><button class="btn btn-option" (click)="filterMutation(MutationOption.WITHOUT_MUTATION)" [ngStyle]="{'background-color': this.actualFilter === MutationOption.WITHOUT_MUTATION ? '#3B8924': '#2838D1'}">Sin mutación</button></div>
+		<div class="col-3 text-center"><button class="btn btn-new-human" data-toggle="modal" data-target="#newHumanModal">Nuevo humano</button></div>
+		<div class="col-3 text-center"><button class="btn btn-option" (click)="requestStats()">Analizar humanos</button></div>
+		<div class="col-3 text-center"><button class="btn btn-option" (click)="filterMutation(MutationOption.WITH_MUTATION)" [ngStyle]="{'background-color': this.actualFilter === MutationOption.WITH_MUTATION ? '#BA451A': '#2838D1'}">Con mutación</button></div>
+		<div class="col-3 text-center"><button class="btn btn-option" (click)="filterMutation(MutationOption.WITHOUT_MUTATION)" [ngStyle]="{'background-color': this.actualFilter === MutationOption.WITHOUT_MUTATION ? '#3B8924': '#2838D1'}">Sin mutación</button></div>
 	</div>
 	<div class="row my-6">
 		<div class="col-md-4" *ngFor="let human of humans">

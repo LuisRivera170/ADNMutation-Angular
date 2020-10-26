@@ -7,9 +7,14 @@
 }
 
 .header-title {
+	margin-left: 150px;
 	font-size: 2.5rem;
 	font-weight: 500;
 	color: white;
+}
+
+.dropdown > a {
+	margin-right: 150px;
 }
 
 .header-info {
@@ -85,4 +90,34 @@
 	height: 2px;
 	background-color: white;
 	border-radius: .25rem;
+}
+
+@media (max-width: 576px) {
+	
+	.header-title {
+		margin-left: 0;
+		font-size: 1.5rem;
+	}
+
+	.header-info {
+		font-size: .8rem;
+	}
+
+	.dropdown-menu {
+		left: initial;
+		right: -25px;
+	}
+
+	.dropdown > a {
+		margin-right: 0;
+	}
+
+	.btn {
+		font-size: 0.8rem;
+	}
+	
+	.card {
+		padding: 1.2rem 1.2rem;
+	}
+
 }
