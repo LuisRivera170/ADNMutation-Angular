@@ -31,7 +31,7 @@ Para el despliegue en la nube se utilizó el servicio de Firebase Hosting siguie
 2.	Acceder por terminal a la carpeta base del proyecto y ejecutar el siguiente comando para compilar el proyecto para producción.
 
 ```
-ng build --prog
+ng build --prod
 ```
 
 3.	Acceder a la carpeta dist/nombre_del_proyecto generada mediante el punto anterior
